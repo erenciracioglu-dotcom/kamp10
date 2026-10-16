@@ -56,6 +56,7 @@
       .replace(/(^|[^*\w])\*([^*\n]+?)\*(?!\w)/g, '$1<i>$2</i>')
       .replace(/==([^=]+?)==/g, '<mark>$1</mark>')
       .replace(/__([^_]+?)__/g, '<u>$1</u>')
+      .replace(/&lt;br\s*\/?&gt;/g, '<br>').replace(/&amp;nbsp;/g, '&nbsp;')
       .replace(/\u0001/g, '$');
     return s.replace(/\u0000(\d+)\u0000/g, function (m, n) { return keep[+n]; });
   }
